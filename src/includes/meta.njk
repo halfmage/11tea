@@ -6,7 +6,7 @@
 
 {# Open Graph #}
 <meta property="og:site_name" content="{{ meta.title }}" />
-<meta property="og:title" content="{{ renderData.title or title or meta.title }}" />
+<meta property="og:title" content="{{meta.title}} - {{title}}" />
 <meta
   property="og:description"
   content="{{ renderData.description or description or meta.description }}"
@@ -23,7 +23,7 @@
 />
 <meta
   property="og:image"
-  content="{{ renderData.socialImage or image or '/assets/images/og_image.png' }}"
+  content="{{ '/assets/images/wallpaper.jpg' | url }}"
 />
 <meta
   property="og:image:width"
@@ -61,6 +61,6 @@
 <link
   type="application/atom+xml"
   rel="alternate"
-  href="{{ build.url }}/feed.xml"
+  href="{{ meta.url }}/feed.xml"
   title="{{ meta.title }}"
 />
