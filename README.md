@@ -1,3 +1,3 @@
 # 11tea
 
-![11Tea]({{meta.url}}/assets/images/favicon/apple-touch-icon.png)
+![11Tea](https://11tea.netlify.app/assets/images/favicon/apple-touch-icon.png)
