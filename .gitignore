@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+
+# system
+.DS_Store
+
+# config
+.env
+
+# debug
+npm-debug.log*
+
+# caches
+.cache
+
+# output
+/dist

@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "eleventy --serve & postcss src/styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css --o dist/style.css",
+    "clean": "rm -rf dist _tmp"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "alpinejs": "^2.6.0",
+    "html-minifier": "^4.0.0",
+    "postcss-clean": "^1.1.0",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.7.2"
+  }
+}
