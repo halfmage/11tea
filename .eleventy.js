@@ -1,7 +1,10 @@
 const htmlmin = require("html-minifier");
+const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addPlugin(lazyImagesPlugin, {
+    preferNativeLazyLoad: true,
+  });
 
   eleventyConfig.addWatchTarget("./_tmp/style.css");
 
