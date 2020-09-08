@@ -1,6 +1,8 @@
 {
   "title": "11tea",
   "description": "A Eleventy TailwindCSS AplineJS Starter",
+  "author": "Gerrit Halfmann",
+  "twitter": "@halfmage",
   "lang": "en",
   "locale": "en_us",
   "url": "https://11tea.netlify.app"

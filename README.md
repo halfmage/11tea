@@ -4,10 +4,11 @@
 
 ## Features
 
-- 💅 Eleventy with Nunjucks (.njk)
+- 🏗 Eleventy with Nunjucks (.njk)
 - 🧱 Functional CSS with TailwindCSS
 - 🗻 AlpineJS for interactivity
 - 🔍 Optimized SEO with a meta.njk file
+- 🖼 Eleventy Lazy Images Plugin
 - 🏃‍♀️ Build with performance in mind
 
 ## How to use
@@ -29,10 +30,16 @@ npm run build
 npm run start
 ```
 
+## Details
+
+- __Tailwind__: The config file in rhe root folder includes future settings with `removeDeprecatedGapUtilities` and `purgeLayersByDefault` set to `true`. Therefore it is already prepared for v2
+
+- __Favicons__: For the generation of social images and favicon files I used [Real Favicon Generator](https://realfavicongenerator.net/) and adopted the file names of the exports so you can easily copy and replace those images
+
 ## Contribution
 
 Let me know if something does not work or you have ideas for improvements via the Github issues.
 
 ## Shoutouts
 
-- [Greg Wolanski's TEA Starter](https://github.com/gregwolanski/eleventy-tailwindcss-alpinejs-starter) teached me a lot about setting up a eleventy starter in general and I liked the way you inlcude a optimized tailwind css without the need of webpack.
+- [Greg Wolanski's TEA Starter](https://github.com/gregwolanski/eleventy-tailwindcss-alpinejs-starter) teached me a lot about setting up a eleventy starter in general and I liked the way he inlcuded a optimized tailwind css build without the need of webpack.
