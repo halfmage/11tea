@@ -11,6 +11,12 @@
 - 🖼 Eleventy Lazy Images Plugin
 - 🏃‍♀️ Build with performance in mind
 
+## Roadmap
+
+-[] Finish landingpage
+-[] Prepare bare documentation
+-[] Build some examples websites
+
 ## How to use
 
 ```bash
@@ -32,9 +38,9 @@ npm run start
 
 ## Details
 
-- __Tailwind__: The config file in rhe root folder includes future settings with `removeDeprecatedGapUtilities` and `purgeLayersByDefault` set to `true`. Therefore it is already prepared for v2
+- **Tailwind**: The config file in rhe root folder includes future settings with `removeDeprecatedGapUtilities` and `purgeLayersByDefault` set to `true`. Therefore it is already prepared for v2
 
-- __Favicons__: For the generation of social images and favicon files I used [Real Favicon Generator](https://realfavicongenerator.net/) and adopted the file names of the exports so you can easily copy and replace those images
+- **Favicons**: For the generation of social images and favicon files I used [Real Favicon Generator](https://realfavicongenerator.net/) and adopted the file names of the exports so you can easily copy and replace those images
 
 ## Contribution
 
