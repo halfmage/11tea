@@ -13,9 +13,9 @@
 
 ## Roadmap
 
--[] Finish landingpage
--[] Prepare bare documentation
--[] Build some examples websites
+- [ ] Finish landingpage
+- [ ] Prepare bare documentation
+- [ ] Build some examples websites
 
 ## How to use
 
