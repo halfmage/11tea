@@ -16,6 +16,7 @@
 - [ ] Finish landingpage
 - [ ] Prepare bare documentation
 - [ ] Build some examples websites
+- [ ] Prepare easy to use code-snippets
 
 ## How to use
 
