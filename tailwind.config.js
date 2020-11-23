@@ -1,15 +1,17 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   purge: {
     content: ["dist/**/*.html"],
-    options: {
-      whitelist: [],
+  },
+  darkMode: "media",
+  theme: {
+    extend: {
+      colors: {
+        gray: colors.blueGray,
+        primary: colors.lime,
+      },
     },
   },
-  theme: {},
   variants: {},
-  plugins: [],
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
 };
