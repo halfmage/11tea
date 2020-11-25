@@ -1,29 +1,21 @@
-{%- set absolutePageUrl -%}{{ meta.url }}{%- endset -%}
-
-{# General #}
+{%- set absolutePageUrl -%}{{ meta.url }}{%- endset -%} {# General #}
 <meta name="description" content="{{ description or meta.description }}" />
 <link rel="canonical" href="{{ absolutePageUrl }}" />
 
 {# Open Graph #}
 <meta property="og:site_name" content="{{ meta.title }}" />
-<meta property="og:title" content="{{meta.title}} - {{title}}" />
+<meta property="og:title" content="{{ meta.title }} - {{ title }}" />
 <meta
   property="og:description"
   content="{{ renderData.description or description or meta.description }}"
 />
 <meta property="og:url" content="{{ absolutePageUrl }}" />
 <meta property="og:locale" content="{{ meta.locale }}" />
-<meta
-  name="twitter:card"
-  content="summary_large_image"
-/>
-<meta
-  name="twitter:site"
-  content="{{ meta.twitter }}"
-/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="{{ meta.twitter }}" />
 <meta
   property="og:image"
-  content="{{ absolutePageUrl }}/assets/images/wallpaper.jpg"
+  content="{{ absolutePageUrl }}/assets/images/tea1.jpg"
 />
 <meta
   property="og:image:width"
