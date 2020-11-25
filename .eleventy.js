@@ -15,44 +15,46 @@ module.exports = function (eleventyConfig) {
     return String(Date.now());
   });
 
-  eleventyConfig.addNunjucksAsyncShortcode("image", async (src, alt) => {
-    if (!alt) {
-      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
-    }
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "image",
+    async (src, alt, className) => {
+      if (!alt) {
+        throw new Error(`Missing \`alt\` on Image from: ${src}`);
+      }
 
-    let stats = await Image(src, {
-      widths: [25, 320, 640, 960, 1200, 1800, 2400],
-      formats: ["jpeg", "webp"],
-      urlPath: "/images/",
-      outputDir: "./dist/images/",
-    });
+      let stats = await Image(src, {
+        widths: [25, 320, 640, 960, 1200, 1800, 2400],
+        formats: ["jpeg", "webp"],
+        urlPath: "/images/",
+        outputDir: "./dist/images/",
+      });
 
-    let lowestSrc = stats["jpeg"][0];
+      let lowestSrc = stats["jpeg"][0];
 
-    const placeholder = await sharp(lowestSrc.outputPath)
-      .resize({ fit: sharp.fit.inside })
-      .blur()
-      .toBuffer();
+      const placeholder = await sharp(lowestSrc.outputPath)
+        .resize({ fit: sharp.fit.inside })
+        .blur()
+        .toBuffer();
 
-    const base64Placeholder = `data:image/png;base64,${placeholder.toString(
-      "base64"
-    )}`;
+      const base64Placeholder = `data:image/png;base64,${placeholder.toString(
+        "base64"
+      )}`;
 
-    const srcset = Object.keys(stats).reduce(
-      (acc, format) => ({
-        ...acc,
-        [format]: stats[format].reduce(
-          (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-          ""
-        ),
-      }),
-      {}
-    );
+      const srcset = Object.keys(stats).reduce(
+        (acc, format) => ({
+          ...acc,
+          [format]: stats[format].reduce(
+            (_acc, curr) => `${_acc} ${curr.srcset} ,`,
+            ""
+          ),
+        }),
+        {}
+      );
 
-    const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
+      const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
 
-    const img = `<img
-      class="lazy"
+      const img = `<img
+      class="lazy ${className}"
       alt="${alt}"
       src="${base64Placeholder}"
       data-src="${lowestSrc.url}"
@@ -61,8 +63,9 @@ module.exports = function (eleventyConfig) {
       width="${lowestSrc.width}"
       height="${lowestSrc.height}">`;
 
-    return `<div class="image-wrapper"><picture> ${source} ${img} </picture></div>`;
-  });
+      return `<div class="image-wrapper"><picture> ${source} ${img} </picture></div>`;
+    }
+  );
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (
