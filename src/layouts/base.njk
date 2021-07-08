@@ -19,15 +19,8 @@ title: Default
     {% include "meta.njk" %}
   </head>
 
-  <body class="text-primary-900 bg-primary-50">
-    {% include "../includes/header.njk" %}
+  <body class="">
     {{ content | safe }}
-    {% include "../includes/footer.njk" %}
-
-    <script type="module" async>
-      import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
-      const lazyload = new Lazyload();
-    </script>
   </body>
 
 </html>
