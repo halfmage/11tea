@@ -10,7 +10,7 @@ async function imageShortcode(src, alt, className, sizes = "100vw") {
   let metadata = await Image(src, {
     widths: [200, 400, 800, 1200],
     formats: ['webp', 'jpeg'],
-    outputDir: "./dist/img/",
+    outputDir: "./_site/img/",
   });
 
   let lowsrc = metadata.jpeg[0];
@@ -40,7 +40,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
 
   eleventyConfig.addShortcode("version", function () {
-    return String(Date.now());
+    return now;
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
@@ -58,21 +58,10 @@ module.exports = function (eleventyConfig) {
       });
       return minified;
     }
-
     return content;
   });
 
   return {
-    dir: {
-      input: "src",
-      output: "dist",
-      layouts: "layouts",
-      includes: "includes",
-      data: "data",
-    },
-    passthroughFileCopy: true,
-    templateFormats: ["html", "njk"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
   };
 };

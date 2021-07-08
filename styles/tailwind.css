@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* inter-regular - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/inter-v3-latin-400.woff2') format('woff2'),
+    url('../fonts/inter-v3-latin-400.woff') format('woff');
+}
+/* inter-500 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+    url('../fonts/inter-v3-latin-500.woff2') format('woff2'),
+    url('../fonts/inter-v3-latin-500.woff') format('woff');
+}
+/* inter-700 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+    url('../fonts/inter-v3-latin-700.woff2') format('woff2'),
+    url('../fonts/inter-v3-latin-700.woff') format('woff');
+}
+
+.responsive {
+  @apply h-full w-full object-cover
+}

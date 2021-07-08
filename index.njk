@@ -1,0 +1,16 @@
+---
+layout: base
+title: Homepage
+permalink: /
+---
+
+
+<h1 class="text-4xl font-bold mb-4 uppercase">{{settings.title}} - <span class="italic">develop version</span></h1>
+<h2 class="mb-8">{{settings.description}} made by {{settings.twitter}}</h2>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+  {% image "img/teapot.jpg", "teapot", "responsive" %}
+  {% image "img/teapot2.jpg", "teapot2", "responsive" %}
+  {% image "img/tea3.jpg", "tea", "responsive" %}
+  {% image "img/tea4.jpg", "tea2", "responsive" %}
+</div>

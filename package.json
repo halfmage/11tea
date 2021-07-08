@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A Eleventy TailwindCSS AplineJS Starter",
   "scripts": {
-    "start": "eleventy --serve & postcss src/styles/tailwind.css --o _tmp/style.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css --o dist/style.css && cleancss dist/style.css -o dist/style.css",
-    "clean": "rm -rf dist _tmp"
+    "clean": "rm -rf _site _tmp",
+    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css"
   },
   "repository": {
     "type": "git",
