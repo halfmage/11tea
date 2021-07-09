@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Eleventy TailwindCSS AplineJS Starter",
   "scripts": {
-    "clean": "rm -rf _site _tmp",
+    "clean": "rm -rf _site _tmp && npm run build",
     "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
     "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css"
   },

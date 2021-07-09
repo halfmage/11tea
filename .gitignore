@@ -16,3 +16,4 @@ npm-debug.log*
 # output
 /dist
 /_tmp
+/_site
