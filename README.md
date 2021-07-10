@@ -11,7 +11,6 @@
 - Simple use of **@11ty/eleventy-img**
 - Minifies HTML and CSS with **html-minifier**
 - **Fonts** folder with easy replacement
-- Default optional **netlify.toml**
 - Optimized for develop-performance
 - Super simple project architecture
 
