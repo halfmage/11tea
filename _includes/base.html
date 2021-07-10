@@ -6,7 +6,7 @@ title: Default
 <html lang="{{ meta.lang }}" class="bg-white antialiased">
   <head>
     <title>
-      {{meta.title}} - {{title}}
+      {{settings.title}} - {{title}}
     </title>
     
     <meta charset="UTF-8"/>
@@ -14,20 +14,13 @@ title: Default
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
     
-    <link rel="stylesheet" href="style.css"/>
-    <script  src="/js/alpine.js" async></script>
-    {% include "meta.njk" %}
+    <link rel="stylesheet" href="/style.css?v={% version %}"/>
+    <script async src="/js/alpine.js?v={% version %}"></script>
+    {% include "meta.html" %}
   </head>
 
-  <body class="text-primary-900 bg-primary-50">
-    {% include "../includes/header.njk" %}
+  <body class="bg-white">
     {{ content | safe }}
-    {% include "../includes/footer.njk" %}
-
-    <script type="module" async>
-      import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
-      const lazyload = new Lazyload();
-    </script>
   </body>
 
 </html>
