@@ -24,6 +24,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false)
 
   eleventyConfig.addPassthroughCopy("images")
+  eleventyConfig.addPassthroughCopy("favicon.png")
   eleventyConfig.addPassthroughCopy("fonts")
   eleventyConfig.addPassthroughCopy("site.webmanifest")
 
