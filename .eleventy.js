@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
         widths: [25, 320, 640, 960, 1200, 1800, 2400],
         formats: ["jpeg", "webp"],
         urlPath: "/images/",
-        outputDir: "./dist/images/",
+        outputDir: "./_site/images/",
       });
 
       let lowestSrc = stats["jpeg"][0];
@@ -87,7 +87,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "dist",
+      output: "_site",
       layouts: "layouts",
       includes: "includes",
       data: "data",
