@@ -1,4 +1,3 @@
-const { warmGray } = require('tailwindcss/colors')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -12,7 +11,7 @@ module.exports = {
     colors: {
       white: '#fff',
       black: '#000',
-      gray: warmGray,
+      gray: colors.warmGray,
       primary: colors.lime,
     },
     fontFamily: {
