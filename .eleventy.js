@@ -19,18 +19,12 @@ async function imageShortcode(src, alt, sizes = "100vw") {
 }
 
 module.exports = function (eleventyConfig) {
+
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
 
-  eleventyConfig.setUseGitIgnore(false)
-
-  eleventyConfig.addPassthroughCopy("images")
   eleventyConfig.addPassthroughCopy("favicon.png")
-  eleventyConfig.addPassthroughCopy("fonts")
-  eleventyConfig.addPassthroughCopy("site.webmanifest")
-
-  eleventyConfig.addWatchTarget('./_tmp/style.css')
-
-  eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' })
+  eleventyConfig.addPassthroughCopy("src/images")
+  eleventyConfig.addPassthroughCopy({"global.out.css": "global.css",});
   
   eleventyConfig.addPassthroughCopy({
     './node_modules/alpinejs/dist/alpine.js': './js/alpine.js',
@@ -59,5 +53,12 @@ module.exports = function (eleventyConfig) {
 
   return {
     htmlTemplateEngine: "njk",
+    dir: {
+        input: "src",
+        output: "_site",
+        includes: "includes",
+        layouts: "layouts",
+        data: "data"
+    },
   };
 }

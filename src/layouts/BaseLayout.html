@@ -1,0 +1,51 @@
+---
+title: Default
+---
+
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}" class="bg-white antialiased">
+  <head>
+    <title>
+      {{ title }} - {{ settings.title }}
+    </title>
+    
+    <meta charset="UTF-8"/>
+    <meta name="description" content="{{meta.description}}"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+    
+    <link rel="stylesheet" href="./global.css"/>
+    <script async src="/js/alpine.js?v={% version %}"></script>
+    
+    <meta name="description" content="{{ description or settings.description }}" />
+    <link rel="canonical" href="{{ settings.url }}" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+
+    <!-- HTML Meta Tags -->
+    <title>{{ title }} – {{ settings.title }}</title>
+    <meta name="description" content="{{ title }}">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://everythingcs.dev/blog/setup-tailwindcss-eleventy/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="How to setup TailwindCSS for 11ty Eleventy static site generator">
+    <meta property="og:description" content="Step by step guide on how to setup tailwindcss for eleventy site">
+    <meta property="og:image" content="https://static.everythingcs.dev/blog/tailwindcss-eleventy-setup.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="everythingcs.dev">
+    <meta property="twitter:url" content="https://everythingcs.dev/blog/setup-tailwindcss-eleventy/">
+    <meta name="twitter:title" content="How to setup TailwindCSS for 11ty Eleventy static site generator">
+    <meta name="twitter:description" content="Step by step guide on how to setup tailwindcss for eleventy site">
+    <meta name="twitter:image" content="https://static.everythingcs.dev/blog/tailwindcss-eleventy-setup.png">
+
+
+  </head>
+
+  <body class="bg-white">
+    {{ content | safe }}
+  </body>
+
+</html>

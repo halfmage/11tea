@@ -1,11 +1,10 @@
 {
   "name": "11tea",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Eleventy TailwindCSS AplineJS Starter",
   "scripts": {
-    "clean": "rm -rf _site _tmp && npm run build",
-    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css"
+    "start": "eleventy --serve & tailwindcss -i ./src/includes/css/global.css -o global.out.css --watch",
+    "build": "npx @11ty/eleventy & tailwindcss -i ./src/includes/css/global.css -o ./_site/global.css --minify"
   },
   "repository": {
     "type": "git",
