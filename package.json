@@ -1,10 +1,10 @@
 {
   "name": "11tea",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A Eleventy TailwindCSS AplineJS Starter",
   "scripts": {
-    "start": "eleventy --serve & tailwindcss -i ./src/includes/css/global.css -o global.out.css --watch",
-    "build": "npx @11ty/eleventy & tailwindcss -i ./src/includes/css/global.css -o ./_site/global.css --minify"
+    "start": "eleventy --serve & npx tailwindcss -i src/styles/tailwind.css -c src/styles/tailwind.config.js -o _site/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i src/styles/tailwind.css -c src/styles/tailwind.config.js -o _site/style.css --minify"
   },
   "repository": {
     "type": "git",
@@ -22,12 +22,9 @@
   "homepage": "https://github.com/halfmage/11tea#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^4.0.2",
-    "alpinejs": "^3.13.7",
-    "autoprefixer": "^10.4.19",
-    "clean-css-cli": "^5.6.3",
+    "@11ty/eleventy-server-browsersync": "^1.0.2",
+    "alpinejs": "^3.13.10",
     "html-minifier": "^4.0.0",
-    "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.3"
   }
 }

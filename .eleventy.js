@@ -1,38 +1,27 @@
-const Image = require("@11ty/eleventy-img")
 const htmlmin = require('html-minifier')
+
 const now = String(Date.now())
 
-async function imageShortcode(src, alt, sizes = "100vw") {
-  let metadata = await Image(`${src}`, {
-    widths: [600, 1000, 1600],
-    formats: ["avif", "jpeg"],
-    urlPath: "/img/",
-    outputDir: "./_site/img/"
-  });
-  let imageAttributes = {
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-  };
-  return Image.generateHTML(metadata, imageAttributes);
-}
-
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addWatchTarget('./src/styles/tailwind.config.js')
+  eleventyConfig.addWatchTarget('./src/styles/tailwind.css')
 
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
-
-  eleventyConfig.addPassthroughCopy("favicon.png")
-  eleventyConfig.addPassthroughCopy("src/images")
-  eleventyConfig.addPassthroughCopy({"global.out.css": "global.css",});
-  
   eleventyConfig.addPassthroughCopy({
-    './node_modules/alpinejs/dist/alpine.js': './js/alpine.js',
+    './node_modules/alpinejs/dist/cdn.js': './js/alpine.js',
   })
 
   eleventyConfig.addShortcode('version', function () {
     return now
   })
+
+	eleventyConfig.setServerOptions({
+		module: "@11ty/eleventy-server-browsersync",
+		port: 8080,
+		open: false,
+		notify: false,
+		ui: false,
+		ghostMode: false,
+	});
 
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (
@@ -47,7 +36,6 @@ module.exports = function (eleventyConfig) {
       });
       return minified
     }
-
     return content
   });
 
