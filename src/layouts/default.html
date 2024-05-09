@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{title}}</title>
     <meta charset="UTF-8"/>
-    <meta name="description" content="{{description}}"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-    <link rel="stylesheet" href="/style.css?v={% version %}"/>
-    <script defer src="/js/alpine.js?v={% version %}"></script>
+    <title>{% if title %}{{title}}{%else%}{{settings.title}}{% endif %}</title>
+    <meta name="description" content="{% if description %}{{description}}{%else%}{{settings.description}}{% endif %}"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <script defer src="/js/alpine.js"></script>
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-200">
     {{ content | safe }}
   </body>
 </html>

@@ -1,5 +1,3 @@
-const htmlmin = require('html-minifier')
-
 const now = String(Date.now())
 
 module.exports = function (eleventyConfig) {
@@ -22,22 +20,6 @@ module.exports = function (eleventyConfig) {
 		ui: false,
 		ghostMode: false,
 	});
-
-  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
-    if (
-      process.env.ELEVENTY_PRODUCTION &&
-      outputPath &&
-      outputPath.endsWith('.html')
-    ) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
-      return minified
-    }
-    return content
-  });
 
   return {
     htmlTemplateEngine: "njk",
