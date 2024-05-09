@@ -3,10 +3,14 @@ layout: default
 title: test
 ---
 
-<div class="p-12">
+<div class="p-12 bg-gray-100">
+  <div class="w-16 rounded-xl overflow-hidden">
+    {% image "./src/public/img/tea.jpg", "", "", "w-full object-contain" %}
+  </div>
+  <br/>
   <span class="text-change font-bold italic">Good design</span>
-  <br/><br/>
+  <br/>
   <span class="change">is as little design as possible</span>
-  <br/><br/>
+  <br/>
   <span x-data="{message:'🤖 Alpine JS Test 🤓'}" x-text="message"></span>
 </div>
