@@ -3,7 +3,6 @@ const now = String(Date.now())
 
 async function imageShortcode(src, alt, pictureClass, imgClass) {
   if(alt === undefined) {
-      // You bet we throw an error on missing alt (alt="" works okay)
       throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
 

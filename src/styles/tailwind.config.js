@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        change: 'teal',
+        primary: '#00f',
       },
       fontFamily: {
         'body': ['Inter, system-ui, sans-serif'],
