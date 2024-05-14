@@ -4,13 +4,8 @@ title: test
 ---
 
 <div class="p-12 bg-gray-100">
-  <div class="w-16 rounded-xl overflow-hidden">
-    {% image "./src/public/img/tea.jpg", "", "", "w-full object-contain" %}
-  </div>
-  <br/>
-  <span class="text-change font-bold italic">Good design</span>
-  <br/>
-  <span class="change">is as little design as possible</span>
-  <br/>
+  {% image "src/img/tea.jpg", "ALT", "", "size-48 mb-4" %}
+  <h1 class="text-7xl tracking-tighter">Low level utility to perform build-time</h1>
+  <h2 class="change">is as little design as possible</h2>
   <span x-data="{message:'🤖 Alpine JS Test 🤓'}" x-text="message"></span>
 </div>

@@ -21,13 +21,13 @@ async function imageShortcode(src, alt, pictureClass, imgClass) {
       return ` <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}">`;
       }).join("\n")}
       <img
-          src="${lowsrc.url}"
-          width="${highsrc.width}"
-          height="${highsrc.height}"
-          alt="${alt}"
-          class="${imgClass}"
-          loading="lazy"
-          decoding="async">
+        src="${lowsrc.url}"
+        width="${highsrc.width}"
+        height="${highsrc.height}"
+        alt="${alt}"
+        class="inline-block ${imgClass}"
+        loading="lazy"
+        decoding="async">
       </picture>`;
 }
 
@@ -39,9 +39,8 @@ module.exports = function (eleventyConfig) {
     './node_modules/alpinejs/dist/cdn.js': './js/alpine.js',
   })
 
-  eleventyConfig.addPassthroughCopy({
-    './src/public/': '/',
-  })
+  eleventyConfig.addPassthroughCopy('src/img')
+  eleventyConfig.addPassthroughCopy('src/fonts')
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
 
@@ -64,7 +63,6 @@ module.exports = function (eleventyConfig) {
         input: "src",
         output: "_site",
         includes: "includes",
-        layouts: "layouts",
         data: "data"
     },
   };

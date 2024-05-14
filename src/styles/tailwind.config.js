@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         change: 'teal',
       },
+      fontFamily: {
+        'body': ['Inter, system-ui, sans-serif'],
+      }
     },
   },
   plugins: [],
