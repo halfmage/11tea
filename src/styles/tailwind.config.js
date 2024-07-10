@@ -1,13 +1,14 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: ['_site/**/*.html'],
-  safelist: [],
   theme: {
     extend: {
       colors: {
-        primary: '#00f',
+        primary: colors.lime,
       },
       fontFamily: {
-        'body': ['Inter, system-ui, sans-serif'],
+        'primary': ['Inter, system-ui, sans-serif'],
       }
     },
   },
